@@ -1,0 +1,15 @@
+{
+  "extends": [
+    "next/core-web-vitals"
+    // "airbnb",
+    // "airbnb-typescript"
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    "react/jsx-props-no-spreading": "off",
+    "react-hooks/rules-of-hooks": "off",
+    "jsx-a11y/alt-text": "off"
+  }
+}

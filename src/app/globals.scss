@@ -1,0 +1,106 @@
+body {
+  margin: 0;
+  // overflow: scroll;
+  // height: 100vh;
+}
+
+h1,
+h2,
+p,
+input,
+button {
+  margin: 0;
+  font-size: 1.143rem;
+  font-weight: 400;
+}
+
+a,
+a:hover {
+  color: var(--primary-color);
+}
+
+#sidebar {
+  .ant-menu-item {
+    padding: 0 !important;
+    width: 160px !important;
+  }
+
+  .ant-menu-item-selected {
+    background: var(--primary-color) !important;
+    color: #fff !important;
+  }
+}
+
+.auth-input {
+  border: 1px solid var(--primary-color) !important;
+  padding: 8px 16px !important;
+  border-radius: 10px !important;
+}
+
+.auth-input > p {
+  color: #000 !important;
+  font-size: 1.143rem !important;
+  font-weight: 500 !important;
+}
+
+.table-action-btn {
+  width: fit-content;
+  padding: 4px 16px;
+  border: 2px solid #ececf2;
+  padding-bottom: 12px;
+  border-radius: 8px;
+  color: #8181a5;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.action-btn,
+.action-btn-loading {
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.ordinary-element {
+  border: none;
+  position: relative;
+  background: transparent;
+}
+
+.action-loading {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+input[type='file'] {
+  color: transparent;
+}
+
+/* Style to create a custom appearance for the file input */
+.custom-file-input {
+  display: inline-block;
+  padding: 8px 12px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Style to remove the default button appearance in some browsers */
+input[type='file']::-webkit-file-upload-button {
+  visibility: hidden;
+}
