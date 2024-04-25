@@ -28,10 +28,6 @@ export const authOptions = {
             console.log(error);
             return null;
           })
-          .catch((error) => {
-            console.log(error);
-            return null;
-          });
       },
     }),
   ],
