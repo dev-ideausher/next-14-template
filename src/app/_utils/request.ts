@@ -32,11 +32,12 @@ export const createRequest = async (
         : {}),
     };
     let url = BASE_URL;
-    if (['restaurant-signup', 'login'].includes(path)) {
+    if (['login'].includes(path)) {
       url += 'auth';
-    } else {
-      url += 'restaurants';
     }
+    // else {
+    //   url += 'restaurants';
+    // }
     if (tag) {
       options.next = {
         tags: [tag],
