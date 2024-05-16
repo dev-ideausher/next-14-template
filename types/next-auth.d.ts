@@ -11,8 +11,6 @@ declare module 'next-auth' {
       photoURL: string | null;
       isAnonymous: boolean;
       accessToken: string;
-      availableForBooking: boolean;
-      restaurantId: string;
     };
   }
 }
