@@ -11,6 +11,8 @@ const CustomUpload = ({
   name,
   fileType,
   multiple,
+  className,
+  plusFont,
 }: {
   multiple?: boolean;
   file?: File;
@@ -18,6 +20,8 @@ const CustomUpload = ({
   fileType?: string;
   children?: ReactNode;
   style?: CSSProperties;
+  className?: string;
+  plusFont?: string;
   setFile?: (file: File[] | undefined) => void;
 }) => {
   const fileRef = useRef(null);
@@ -37,7 +41,7 @@ const CustomUpload = ({
   return (
     <>
       <div
-        className='place-middle'
+        className={`place-middle cu-pointer ${className || ''}`}
         style={{
           flexDirection: 'column',
           background: 'rgba(251, 148, 0, 0.10)',
@@ -53,7 +57,7 @@ const CustomUpload = ({
           <span
             className='c-primary'
             style={{
-              fontSize: '2rem',
+              fontSize: plusFont || '2rem',
             }}
           >
             +

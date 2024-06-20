@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import { ChangeEvent } from 'react';
 import infoIcon from '../../../../public/infoIcon.svg';
+import Label from './Label';
+import InputWrapper from './InputWrapper';
 
 const CustomInput = ({
   label,
@@ -43,35 +45,17 @@ const CustomInput = ({
       }
     : undefined;
   return (
-    <div
-      className={className || ''}
-      style={{
-        textAlign: 'left',
-        borderBottom: '2px solid #F0F0F3',
-        padding: '8px 0px',
-        ...(boxStyle || {}),
-      }}
+    <InputWrapper
+      boxStyle={boxStyle}
+      labelStyle={labelStyle}
+      required={required}
+      className={className}
+      label={label}
     >
-      {label && (
-        <p
-          className='c-label fs-sm'
-          style={{
-            marginBottom: 8,
-            ...(labelStyle || {}),
-          }}
-        >
-          {label}
-          {!!required && <span className='c-primary'>*</span>}
-        </p>
-      )}
       <div className='d-flex align-center'>
         <input
-          style={{
-            border: 'none',
-            outline: 'none',
-            width: '100%',
-            ...(inputStyle || {}),
-          }}
+          className='simple w-100'
+          style={inputStyle || {}}
           name={name}
           type={type || 'text'}
           value={onChange ? value : undefined}
@@ -87,7 +71,7 @@ const CustomInput = ({
           <Image alt={infoTag} src={infoIcon} height={16} width={16} />
         )}
       </div>
-    </div>
+    </InputWrapper>
   );
 };
 
