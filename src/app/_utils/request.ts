@@ -2,7 +2,8 @@
 import { getServerSession } from 'next-auth';
 import { redirect } from 'next/navigation';
 import { authOptions } from '../../../pages/api/auth/[...nextauth]';
-const BASE_URL = `${process.env.NEXT_PUBLIC_API_URL}/v1/`;
+import { headers } from 'next/headers';
+const BASE_URL = `${process.env.NEXT_PUBLIC_API_URL}/v1`;
 
 export const createRequest = async (
   session: any,
@@ -32,12 +33,9 @@ export const createRequest = async (
         : {}),
     };
     let url = BASE_URL;
-    if (['login'].includes(path)) {
-      url += 'auth';
+    if (path === 'login') {
+      url += '/auth';
     }
-    // else {
-    //   url += 'restaurants';
-    // }
     if (tag) {
       options.next = {
         tags: [tag],
@@ -67,7 +65,10 @@ export const createRequest = async (
     };
   }
   if (resBody.redirectToLogin) {
-    redirect('/login');
+    const headersList = headers();
+    const redirectPath = headersList.get('x-pathname');
+
+    redirect(`/login?redirectBack=${redirectPath}`);
   }
   return resBody;
 };
