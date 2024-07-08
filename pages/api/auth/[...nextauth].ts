@@ -8,6 +8,10 @@ export const authOptions = {
   pages: {
     signIn: '/login',
   },
+  session: {
+    strategy: 'jwt',
+    maxAge: 59 * 60,
+  },
   providers: [
     CredentialsProvider({
       name: 'Credentials',
