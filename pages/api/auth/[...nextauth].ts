@@ -8,10 +8,6 @@ export const authOptions = {
   pages: {
     signIn: '/login',
   },
-  session: {
-    strategy: 'jwt',
-    maxAge: 59 * 60,
-  },
   providers: [
     CredentialsProvider({
       name: 'Credentials',
@@ -63,4 +59,11 @@ export const authOptions = {
     },
   },
 };
-export default NextAuth(authOptions);
+
+export default NextAuth({
+  ...authOptions,
+  session: {
+    strategy: 'jwt',
+    maxAge: 59 * 60,
+  },
+});
