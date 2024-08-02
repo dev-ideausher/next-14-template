@@ -5,6 +5,7 @@ import SessionProvider from './Providers';
 import './globals.scss';
 import './customize.scss';
 import './override.scss';
+import { ReactNode } from 'react';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -15,13 +16,18 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  content,
 }: Readonly<{
   children: React.ReactNode;
+  content: ReactNode;
 }>) {
   return (
     <html lang='en'>
       <body className={inter.className}>
-        <SessionProvider>{children}</SessionProvider>
+        <SessionProvider>
+          {children}
+          {content}
+        </SessionProvider>
       </body>
     </html>
   );
